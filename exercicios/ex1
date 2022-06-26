@@ -17,16 +17,40 @@ da fatura (isso é, multiplica a quantidade pelo preço por item) e depois
 retorna o valor.*/
 
 
+/*metodo set e get
+
+    recomendado utilizar nos atributos privados, mas
+    tambem os publicos
+
+    get -> retorna algo
+    set -> manipula o atributo e insere valor dentro dele
+
+    ex: 
+
+    $loja = new Venda;
+
+    $loja->setNome("Mercadinho Mendes");
+    echo ("O nome do nosso merdado é {$loja->getNome()}");
+
+*/
+
+
 class Invoice
 {
-    public $numero;
-    public $descricao;
-    public $quantidade;
-    public $preco;
+    public int $numero;
+    public string $descricao;
+    public int $quantidade;
+    public float $preco;
 
 
-    public function __construct($numero, $descricao, $quantidade, $preco)
-    {
+    public function __construct
+    (
+    int $numero, 
+    string $descricao, 
+    int $quantidade, 
+    float$preco
+
+    ){
         $this->numero = $numero;
         $this->descricao = $descricao;
         $this->quantidade = $quantidade;
@@ -48,17 +72,65 @@ class Invoice
 
         return "R$ ". $this->preco;
     }
+
+
+    //metodos set e get para cada variavel de instancia
+
+    //$numero
+
+    public function getNumero(){
+        return $this->numero;
+    }
+
+    public function setNumero ($numero){
+        $this->numero = $numero;
+
+    }
+
+
+    //$descricao
+    public function getDescricao(){
+        return $this->descricao;
+    }
+    
+    public function setDescricao($descricao){
+        $this->descricao = $descricao;
+    }
+
+
+    //$quantidade
+    
+    public function getQuantidade(){
+        return $this->quantidade;
+    }
+
+    public function setQuantidade($quantidade){
+        $this->quantidade = $quantidade;
+    }
+
+
+    //$preco
+
+    public function getPreco(){
+        return $this->preco;
+    }
+
+    public function setPreco($preco){
+        $this->preco = $preco;
+    }
+    
+    
 }
 
 
 
 $suprimento = new Invoice(
-    '589',
+    589,
     "Monitor",
-    '2',
-    '1500'
+    3,
+    1500
 );
 
-echo ($suprimento->getInvoiceAmount()) //300;
+echo ($suprimento->getInvoiceAmount()) //4500;
 
 ?>
