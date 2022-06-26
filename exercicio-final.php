@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 //EXERCÍCIO FINAL AULA DE PHP OO
 
@@ -17,15 +17,19 @@ class venda
 
     //criacao da class com dados privados 
     
-    private $data;
-    private $produto;
-    private $quantidade;
-    private $valorTotal;
+    private string $data;
+    private string $produto;
+    private int $quantidade;
+    private float $valorTotal;
 
 
 
     //passando parametros da class no metodo construct
-    public function __construct($data, $produto, $quantidade, $valorTotal)
+    public function __construct
+    (string $data, 
+    string $produto, 
+    int $quantidade, 
+    float $valorTotal)
     {
         $this->data = $data;
         $this->produto = $produto;
@@ -51,7 +55,7 @@ class venda
 
 //atribuindo os elementos do obj
 $venda = new venda(
-    26/06/2022,
+    '26/06/2022',
     'Tênis Nike',
     1,
     500.00

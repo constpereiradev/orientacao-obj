@@ -1,22 +1,43 @@
 <?php
+//tipagem
+
+
+//checagem de tipos, importante colocar em todos os codigos
+declare(strict_types=1);
+
+
+
+
 //definindo classes em php
 
 
 class contaBancaria
 
 {
-    private $banco;
-    private $nomeTitular;
-    private $numeroAgencia;
-    private $numeroConta;
-    private $saldo;
+    private string $banco;
+
+    private string $nomeTitular;
+
+    private string $numeroAgencia;
+
+    private string $numeroConta;
+
+    private float $saldo;
 
 
 
     //metodo construct
 
-    public function __construct($banco, $nomeTitular, $numeroAgencia, $numeroConta, $saldo)
-    {
+    public function __construct(
+
+        string $banco, 
+        string $nomeTitular, 
+        string $numeroAgencia, 
+        string $numeroConta, 
+        float $saldo
+
+        ){
+        
         echo ("Olá, ". $nomeTitular);
         //echo ("Eu sou o método construct.");
 
@@ -40,14 +61,14 @@ class contaBancaria
         }
 
         //metodo depositar
-        public function depositar($valor)
+        public function depositar(float $valor)
         {
             $this->saldo += $valor;
         }
 
         //metodo sacar
 
-        public function sacar($valor)
+        public function sacar(float $valor)
         {
             $this->saldo -= $valor;
         }
