@@ -33,6 +33,10 @@ class Ponto2D {
     }
 
 
+    public function definirLocal(){
+        
+    }
+
 }
 
 
