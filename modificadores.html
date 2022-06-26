@@ -25,5 +25,54 @@
             <li>Métodos</li>
         </a>
     </ol>
+
+
+
+    <h2>Visibilidade</h2>
+    <p>Modificadores de acesso: define qual é a visibilidade dos elementos da class para elementos externos da class.</p>
+    <p>Tipos: </p>
+    <ul>
+        <li>Publico (public)</li>
+        <p>Deixa o elemento público.<br>
+                Qualquer elemento de fora da classe consegue acessar os atributos.
+        </p><br>
+        <li>Privado (private)</li>
+        <p>
+            Deixa o elemento privado.<br>
+                Não é possível acessar os atributos de fora da class.
+        </p><br>
+        <li>Protegido (protected)</li>
+        <p>
+            Semelhante ao private. <br>
+                Bloqueia o acesso para elementos de fora da class. A única diferença é que possui uma excessão:
+                Consigo acessar elementos protecteds em classes que herdam a class pai.
+        </p><br>
+    </ul>
+
+
+    <code>
+        <p>
+            //definindo classes em php<br>
+            
+            
+            class contaBancaria<br>
+            {<br>
+                public $banco;<br>
+                public $nomeTitular;<br>
+                public $numeroAgencia;<br>
+                public $numeroConta;<br>
+                public $saldo;<br>
+                <br>
+            }<br>
+            <br>
+            <br>
+            $conta = new contaBancaria(); // criei uma instancia da classe (objeto)<br>
+            <br>
+            <br>
+            </p>
+    </code>
+
+
+    <a href="metodos.html">Vá para os métodos.</a>
 </body>
 </html>
